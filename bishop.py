@@ -4,6 +4,7 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
     P2 = p2
 
     if player == "white" and n != 0:
+        
         if direction == "up left" and p1 > 0 and p2 > 0:
             if p1 == 1 or p2 == 1 or n == 1:
                 if list[p1-1][p2-1] in white:
@@ -21,9 +22,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2-1] = "x"
                 
                 if list[p1-1][p2-1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -46,9 +50,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1+1][p2-1] = "x"
                 
                 if list[p1+1][p2-1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -71,9 +78,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2+1] = "x"
                 
                 if list[p1-1][p2+1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -96,17 +106,22 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1][p2+1] = "x"
                 
                 if list[p1+1][p2+1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
                     return list
+        
         else:
             return list
             
     elif player == "black" and n != 0:
+        
         if direction == "up left" and p1 > 0 and p2 > 0:
             if p1 == 1 or p2 == 1 or n == 1:
                 if list[p1-1][p2-1] in black:
@@ -124,9 +139,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2-1] = "y"
                 
                 if list[p1-1][p2-1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -149,9 +167,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1+1][p2-1] = "y"
                 
                 if list[p1+1][p2-1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -174,9 +195,12 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2+1] = "y"
                 
                 if list[p1-1][p2+1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -199,13 +223,17 @@ def move_bishop(list, p1, p2, direction, player, black, white, n):
                             list[p1+1][p2+1] = "y"
                 
                 if list[p1+1][p2+1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1 and p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
                     return list
+        
         else:
             return list
 

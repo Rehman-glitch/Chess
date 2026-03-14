@@ -4,6 +4,7 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
     P2 = p2
     
     if player == "white" and n != 0:
+
         if direction == "up" and p1 > 0:
             if p1 == 1 or n == 1:
                 if list[p1-1][p2] in white:
@@ -20,9 +21,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2] = "x"
                 
                 if list[p1-1][p2] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2] = list[P1][P2]
                     list[P1][P2] = ""
@@ -44,9 +48,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1+1][p2] = "x"
                 
                 if list[p1+1][p2] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2] = list[P1][P2]
                     list[P1][P2] = ""
@@ -68,9 +75,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1][p2-1] = "x"
                 
                 if list[p1][p2-1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -92,13 +102,17 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1][p2+1] = "x"
                 
                 if list[p1][p2+1] in white:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
                     return list
+        
         else:
             return list
 
@@ -120,9 +134,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1-1][p2] = "y"
                 
                 if list[p1-1][p2] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1-1][p2] = list[P1][P2]
                     list[P1][P2] = ""
@@ -144,9 +161,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1+1][p2] = "y"
                 
                 if list[p1+1][p2] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p1 == P1:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1+1][p2] = list[P1][P2]
                     list[P1][P2] = ""
@@ -168,9 +188,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1][p2-1] = "y"
                 
                 if list[p1][p2-1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1][p2-1] = list[P1][P2]
                     list[P1][P2] = ""
@@ -192,9 +215,12 @@ def move_rook(list, p1, p2, direction, player, black, white, n):
                             list[p1][p2+1] = "y"
                 
                 if list[p1][p2+1] in black:
-                    list[p1][p2] = list[P1][P2]
-                    list[P1][P2] = ""
-                    return list
+                    if p2 == P2:
+                        return list
+                    else:
+                        list[p1][p2] = list[P1][P2]
+                        list[P1][P2] = ""
+                        return list
                 else:   
                     list[p1][p2+1] = list[P1][P2]
                     list[P1][P2] = ""
